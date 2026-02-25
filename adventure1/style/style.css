@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: sans-serif;
+    background-color: #0f0f0f;
+    color: #ffffff;
+}
+
+
+/* Шапка */
+.header {
+    padding: 30px 0;
+    border-bottom: 1px solid rgb(255, 255, 255, 0.1);
+    background-color: rgba(15, 15, 15, 0.877);
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoImg {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 25px;
+}
+
+/* Главная страница */
+
+.title {
+    padding: 80px 0 60px 0;
+    text-align: center;
+}
+
+.textContainer {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1.3;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #fff, #b0b0b0);
+    color: transparent;
+    background-clip: text;
+}
+
+.textInfo {
+    font-size: 1.2rem;
+    color: #a0a0a0;
+    max-width: 600px;
+    margin: 0 auto;
+    border-left: 4px solid #fff;
+    padding-left: 20px;
+    text-align: left;
+}
+
+/* Работы */
+.works {
+    padding: 80px 0;
+}
+
+.worksTitle {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+}
+
+.worksDiscription {
+    font-size: 1.1rem;
+    color: #a0a0a0;
+    margin-bottom: 50px;
+    max-width: 500px;
+}
+
+.worksJS {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.work-card {
+    display: block;
+    text-decoration: none;
+    color: white;
+    background-color: #161616;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.work-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.workCardImage {
+    width: 100%;
+    height: 500px;
+    /* Фиксированная высота */
+    overflow: hidden;
+}
+
+.workCardImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Обрезает изображение, чтобы заполнить контейнер */
+    transition: transform 0.5s ease;
+    display: block;
+}
+
+.workCardImage:hover .workCardImage img {
+    transform: scale(1.05);
+}
+
+.wordCardTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 20px 20px 5px 20px;
+}
+
+.wordCardDesk {
+    font-size: 0.95rem;
+    color: #b0b0b0;
+    padding: 0 20px 20px 20px;
+}
+
+/* footer */
+
+.footer {
+    margin-top: 50px;
+    padding: 40px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: #080808;
+}
+
+.footerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #a0a0a0;
+    padding: 0 15px;
+}
+
+.footerCopy {
+    font-size: 1.2rem;
+}
+
+.footerText {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
