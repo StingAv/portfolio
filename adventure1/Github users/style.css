@@ -1,14 +1,30 @@
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #0f0f0f;
+    color: #ffffff;
 }
 
 .header {
     padding: 30px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.041);
+    border-bottom: 1px solid rgb(255, 255, 255, 0.1);
     background-color: rgba(15, 15, 15, 0.877);
-    position: sticky;
     backdrop-filter: blur(5px);
+    position: sticky;
     top: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .backMenu {
@@ -21,40 +37,147 @@
     align-items: center;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    background-color: rgb(5, 5, 5);
-}
-
-h1 {
-    text-align: center;
-}
-
-.container {
-    background-color: rgb(119, 115, 115);
+.search-container {
     max-width: 600px;
     margin: 50px auto;
     padding: 15px;
     border-radius: 25px;
-    box-shadow: 0 2px 10px black;
+    background-color: #161616;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
+h1 {
+    text-align: center;
+    margin: 30px 0 20px;
+    font-size: 2rem;
+    background: linear-gradient(to right, #fff, #b0b0b0);
+    color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+}
+
+/* Форма поиска */
 .search-form {
     display: flex;
     gap: 10px;
 }
 
+/* Поле ввода */
 .input-search {
     flex: 1;
-    padding: 8px;
+    padding: 12px 15px;
+    background-color: #0f0f0f;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    outline: none;
 }
 
+.input-search:focus {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.input-search::placeholder {
+    color: #a0a0a0;
+}
+
+/* Кнопка поиска */
 .button-search {
+    padding: 12px 25px;
+    background-color: #ffffff;
+    color: #0f0f0f;
+    border: none;
+    border-radius: 12px;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
+    transition: opacity 0.3s ease;
 }
 
-img {
-    padding: 25px;
-    margin: 0 auto;
+.button-search:hover {
+    opacity: 0.8;
+}
+
+
+/* Стили для аватара */
+[data-user-info-container] img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    object-fit: cover;
+    flex-shrink: 0;
+    margin: 20px 0 5px;
+}
+
+/* Контейнер текстовой информации */
+[data-user-info-container] div {
+    flex-direction: column;
+}
+
+/* Имя пользователя */
+[data-user-info-container] h2 {
+    font-size: 2rem;
+    background: linear-gradient(to right, #fff, #b0b0b0);
+    color: transparent;
+    background-clip: text;
+}
+
+/* Био */
+[data-user-info-container] p {
+    font-size: 1.3rem;
+    color: #a0a0a0;
+    line-height: 1.5;
+    padding: 10px 0;
+}
+
+/* Контейнер репозиториев */
+[data-repos-container] {
+    margin-top: 20px;
+}
+
+[data-repos-container] h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Стили для репозиториев */
+.repo {
+    padding: 12px 15px;
+    background-color: #0f0f0f;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.repo:hover {
+    transform: translateX(5px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.repo a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    transition: opacity 0.2s ease;
+}
+
+.repo a:hover {
+    opacity: 0.8;
+}
+
+/* Стили для загрузки и ошибок */
+[data-user-info-container] > p {
+    width: 100%;
+    text-align: center;
+    padding: 40px;
+    color: #a0a0a0;
+    font-size: 1.1rem;
 }
