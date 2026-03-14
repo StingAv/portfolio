@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    position: relative;
+}
+
+.header {
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.041);
+    background-color: rgba(15, 15, 15, 0.877);
+    position: sticky;
+    backdrop-filter: blur(5px);
+    top: 0;
+}
+
+.backMenu {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 20px 20px 5px 20px;
+    text-decoration: none;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    transition: transform 0.3s ease;
+    
+    /* Центрирование */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main-container:hover {
+    transform: translate(-50%, -55%);
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.title h1 {
+    color: #333;
+    font-size: 2.5em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.number-one, .number-two {
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: white;
+    outline: none;
+}
+
+.number-one:focus, .number-two:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.number-one::placeholder, .number-two::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.button-form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.plus, .minus, .share, .multiply {
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.plus:hover, .minus:hover, .share:hover, .multiply:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.plus:active, .minus:active, .share:active, .multiply:active {
+    transform: translateY(0);
+}
+
+.plus {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+}
+
+.minus {
+    background: linear-gradient(135deg, #f44336, #e53935);
+    color: white;
+}
+
+.share {
+    background: linear-gradient(135deg, #FF9800, #F57C00);
+    color: white;
+}
+
+.multiply {
+    background: linear-gradient(135deg, #9C27B0, #7B1FA2);
+    color: white;
+}
+
+.button-result {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.result-button {
+    padding: 18px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    width: 100%;
+}
+
+.result-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.result-button:active {
+    transform: translateY(0);
+}
+
+p {
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.result {
+    font-size: 48px;
+    font-weight: bold;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding: 20px;
+    border: 2px dashed #e0e0e0;
+    border-radius: 20px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Анимация для результата */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.result.changed {
+    animation: pulse 0.5s ease;
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 480px) {
+    .main-container {
+        padding: 20px;
+        width: 90%;
+    }
+    
+    .title h1 {
+        font-size: 2em;
+    }
+    
+    .button-form {
+        gap: 10px;
+    }
+    
+    .plus, .minus, .share, .multiply {
+        padding: 15px;
+        font-size: 20px;
+    }
+    
+    .result {
+        font-size: 36px;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-height: 600px) {
+    .main-container {
+        top: 55%;
+        padding: 20px;
+    }
+}
