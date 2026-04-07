@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script.js" defer></script>
+    <title>Портал сотрудника</title>
+</head>
+<body>
+    <header>
+        <div class="tabs">
+            <button class="tab-button active">👤 Личный кабинет</button>
+            <button class="tab-button">👥 Руководитель команды</button>
+            <button class="tab-button">⚙️ Импорт данных</button>
+        </div>
+    </header>
+    <main>
+        <div class="employee-tab">
+            <section class="header">
+                <h1>👋 Добро пожаловать, ${username}!</h1>
+                <div class="employee-info">
+                    <span>Команда:</span>
+                    <strong>Команда друзей GEMS</strong>
+                    <span>Грейд:</span>
+                    <strong>${grade}</strong>
+                    <span>Телеграм:</span>
+                    <strong>${telergam}</strong>
+                    <span>Почта:</span>
+                    <strong>${email}</strong>
+                </div>
+            </section>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">💰 Заработная плата</div>
+                </div>
+                <div class="salary-info">
+                    <div class="salary-amount">1111 ₽</div>
+                    <div class="salary-date">📅 За 12-15 января</div>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Вторая выплата (16-31 янв)</span>
+                    <span class="info-value">5 февраля 2025</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Сумма второй выплаты</span>
+                    <span class="info-value">81 395 ₽</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Итого за январь (на руки)</span>
+                    <span class="info-value">100 000 ₽</span>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

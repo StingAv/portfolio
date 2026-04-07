@@ -1,0 +1,1041 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Портал сотрудника</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Вкладки -->
+      <div class="tabs">
+        <button class="tab-button active" onclick="switchTab('employee')">
+          👤 Личный кабинет
+        </button>
+        <button class="tab-button" onclick="switchTab('manager')">
+          👥 Руководитель команды
+        </button>
+        <button class="tab-button" onclick="switchTab('admin')">
+          ⚙️ Импорт данных
+        </button>
+      </div>
+
+      <!-- Вкладка сотрудника -->
+      <div id="employee-tab" class="tab-content active">
+        <div class="header">
+          <h1>👋 Добро пожаловать, Александр!</h1>
+          <div class="employee-info">
+            <div>
+              <span>Команда:</span>
+              <strong>Команда друзей GEMS</strong>
+            </div>
+            <div>
+              <span>Грейд:</span>
+              <strong>Junior Developer</strong>
+            </div>
+            <div>
+              <span>Телеграм:</span>
+              <strong>@exampleGemsEmployer</strong>
+            </div>
+            <div>
+              <span>Почта:</span>
+              <strong>exampleGemsEmployer@gemsdev.com</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <!-- Зарплата -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">💰</div>
+              <div class="card-title">Заработная плата</div>
+            </div>
+            <div class="salary-info">
+              <div>
+                <div class="salary-amount">18 605 ₽</div>
+                <div class="salary-date">За 12-15 января</div>
+              </div>
+              <div style="text-align: right">
+                <div style="font-size: 20px; font-weight: 600; color: #333">
+                  20 янв
+                </div>
+                <div class="salary-date">2025</div>
+              </div>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Вторая выплата (16-31 янв)</span>
+              <span class="info-value">5 февраля 2025</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Сумма второй выплаты</span>
+              <span class="info-value">81 395 ₽</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Итого за январь (на руки)</span>
+              <span class="info-value">100 000 ₽</span>
+            </div>
+          </div>
+
+          <!-- Отпуск -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">🏖️</div>
+              <div class="card-title">Дни отпуска</div>
+            </div>
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 15px;
+              "
+            >
+              <div>
+                <div style="font-size: 36px; font-weight: 700; color: #2c5aa0">
+                  28
+                </div>
+                <div style="color: #666; font-size: 14px">дней доступно</div>
+              </div>
+              <div style="text-align: right">
+                <div class="badge">100%</div>
+              </div>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 100%"></div>
+            </div>
+            <div class="info-row" style="margin-top: 15px">
+              <span class="info-label">Использовано в 2025</span>
+              <span class="info-value">0 дней</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Запланировано</span>
+              <span class="info-value">Нет</span>
+            </div>
+          </div>
+
+          <!-- Больничные -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">🏥</div>
+              <div class="card-title">Однодневные больничные</div>
+            </div>
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 15px;
+              "
+            >
+              <div>
+                <div style="font-size: 36px; font-weight: 700; color: #2c5aa0">
+                  10
+                </div>
+                <div style="color: #666; font-size: 14px">дней осталось</div>
+              </div>
+              <div style="text-align: right">
+                <div class="badge">100%</div>
+              </div>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 100%"></div>
+            </div>
+            <div class="info-row" style="margin-top: 15px">
+              <span class="info-label">Использовано в 2025</span>
+              <span class="info-value">0 дней</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Последний больничный</span>
+              <span class="info-value">Не использовался</span>
+            </div>
+          </div>
+
+          <!-- Отпускные -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">🧮</div>
+              <div class="card-title">Расчет отпускных (пример)</div>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Планируемый отпуск</span>
+              <span class="info-value">14 дней</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Период</span>
+              <span class="info-value">01.04 - 14.04.2025</span>
+            </div>
+            <div class="calculation-box">
+              <div style="font-size: 12px; color: #666; margin-bottom: 10px">
+                Расчет по ТК РФ 2025:
+              </div>
+              <div class="calc-row">
+                <span>Средний заработок за день:</span>
+                <span>3 923,45 ₽</span>
+              </div>
+              <div class="calc-row">
+                <span>Расчетный период:</span>
+                <span>12 месяцев</span>
+              </div>
+              <div class="calc-row">
+                <span>Среднемесячная ЗП (до вычета):</span>
+                <span>114 943 ₽</span>
+              </div>
+              <div class="calc-row total">
+                <span>Сумма отпускных:</span>
+                <span>54 928,30 ₽</span>
+              </div>
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                font-size: 12px;
+                color: #666;
+                line-height: 1.5;
+              "
+            >
+              * Расчет: (114 943 ₽ × 12 мес.) / (12 мес. × 29.3) × 14 дней
+            </div>
+          </div>
+
+          <!-- Командировки -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">✈️</div>
+              <div class="card-title">Командировки</div>
+            </div>
+            <div class="trip-item">
+              <div class="trip-destination">📍 Омск - Региональный офис</div>
+              <div class="trip-dates">20-22 февраля 2025</div>
+              <div class="info-row" style="border: none; padding: 8px 0 0 0">
+                <span class="info-label">Суточные выплата:</span>
+                <span class="info-value">25 февраля 2025</span>
+              </div>
+              <div class="info-row" style="border: none; padding: 0">
+                <span class="info-label">Сумма:</span>
+                <span class="info-value">4 500 ₽</span>
+              </div>
+            </div>
+            <div class="trip-item">
+              <div class="trip-destination">
+                📍 Красноярск - Встреча с партнерами
+              </div>
+              <div class="trip-dates">15-18 марта 2025</div>
+              <div class="info-row" style="border: none; padding: 8px 0 0 0">
+                <span class="info-label">Суточные выплата:</span>
+                <span class="info-value">21 марта 2025</span>
+              </div>
+              <div class="info-row" style="border: none; padding: 0">
+                <span class="info-label">Сумма:</span>
+                <span class="info-value">6 000 ₽</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Дополнительная информация -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">📊</div>
+              <div class="card-title">Статистика 2026</div>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Отработано дней</span>
+              <span class="info-value">12 дней</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Выплачено в 2026</span>
+              <span class="info-value">0 ₽</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Бонусы и премии</span>
+              <span class="info-value">100000 ₽</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Следующая аттестация</span>
+              <span class="info-value">февраль 2026</span>
+            </div>
+          </div>
+
+          <!-- Компенсация медицинских расходов -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">🏥</div>
+              <div class="card-title">Компенсация мед. расходов</div>
+            </div>
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 15px;
+              "
+            >
+              <div>
+                <div style="font-size: 36px; font-weight: 700; color: #2c5aa0">
+                  20 000 ₽
+                </div>
+                <div style="color: #666; font-size: 14px">
+                  осталось доступно
+                </div>
+              </div>
+              <div style="text-align: right">
+                <div class="badge">74%</div>
+              </div>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 74%"></div>
+            </div>
+            <div
+              style="
+                margin-top: 20px;
+                padding-top: 15px;
+                border-top: 2px solid #f0f0f0;
+              "
+            >
+              <div
+                style="
+                  color: #666;
+                  font-size: 14px;
+                  margin-bottom: 12px;
+                  font-weight: 600;
+                "
+              >
+                История компенсаций:
+              </div>
+              <div class="trip-item">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                  "
+                >
+                  <div>
+                    <div style="font-weight: 600; color: #333">МЕДСИ</div>
+                    <div style="color: #666; font-size: 13px">
+                      15 января 2025
+                    </div>
+                  </div>
+                  <div style="font-weight: 700; color: #2c5aa0">3 000 ₽</div>
+                </div>
+              </div>
+              <div class="trip-item">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                  "
+                >
+                  <div>
+                    <div style="font-weight: 600; color: #333">МЕДСИ</div>
+                    <div style="color: #666; font-size: 13px">
+                      10 января 2025
+                    </div>
+                  </div>
+                  <div style="font-weight: 700; color: #2c5aa0">4 000 ₽</div>
+                </div>
+              </div>
+            </div>
+            <div class="info-row" style="margin-top: 15px">
+              <span class="info-label">Всего использовано</span>
+              <span class="info-value">7 000 ₽</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Годовой лимит</span>
+              <span class="info-value">27 000 ₽</span>
+            </div>
+          </div>
+
+          <!-- Стаж в компании -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">⏱️</div>
+              <div class="card-title">Стаж в компании</div>
+            </div>
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+              "
+            >
+              <div>
+                <div style="font-size: 36px; font-weight: 700; color: #2c5aa0">
+                  1 год<br />6 мес
+                </div>
+                <div style="color: #666; font-size: 14px">в компании</div>
+              </div>
+              <div style="text-align: right">
+                <div class="badge">✓ Испытательный срок пройден</div>
+              </div>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Дата приема на работу</span>
+              <span class="info-value">15 июля 2024</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Должность</span>
+              <span class="info-value">Junior Developer</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Испытательный срок</span>
+              <span class="info-value" style="color: #2c5aa0"
+                >✓ Пройден (3 мес)</span
+              >
+            </div>
+            <div class="info-row">
+              <span class="info-label">Окончание испытательного</span>
+              <span class="info-value">15 октября 2024</span>
+            </div>
+            <div
+              style="
+                margin-top: 20px;
+                padding: 15px;
+                background: linear-gradient(135deg, #d4e3f3 0%, #c5d9ed 100%);
+                border-radius: 10px;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  margin-bottom: 8px;
+                "
+              >
+                <div style="font-size: 20px">🎉</div>
+                <div style="font-weight: 600; color: #2c5aa0">Достижение</div>
+              </div>
+              <div style="color: #666; font-size: 14px; line-height: 1.5">
+                Поздравляем! Вы успешно завершили испытательный срок и стали
+                полноценным членом команды.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Вкладка руководителя -->
+      <div id="manager-tab" class="tab-content">
+        <div class="team-header">
+          <h2>👥 команда друзей GEMS</h2>
+          <p>Управление командой</p>
+        </div>
+
+        <div class="grid">
+          <!-- Зарплаты сотрудников -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">💰</div>
+              <div class="card-title">Зарплаты сотрудников</div>
+            </div>
+            <div class="employee-list-item">
+              <span class="employee-name">Иванов И.</span>
+              <span class="employee-value">120 000 ₽</span>
+            </div>
+            <div class="employee-list-item">
+              <span class="employee-name">Петрова М.</span>
+              <span class="employee-value">95 000 ₽</span>
+            </div>
+            <div class="employee-list-item">
+              <span class="employee-name">Сидоров А.</span>
+              <span class="employee-value">110 000 ₽</span>
+            </div>
+            <div class="employee-list-item">
+              <span class="employee-name">Козлова Е.</span>
+              <span class="employee-value">85 000 ₽</span>
+            </div>
+            <div class="employee-list-item">
+              <span class="employee-name">Морозов Д.</span>
+              <span class="employee-value">100 000 ₽</span>
+            </div>
+            <div
+              style="
+                margin-top: 20px;
+                padding: 15px;
+                background: linear-gradient(135deg, #d4e3f3 0%, #c5d9ed 100%);
+                border-radius: 10px;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+              >
+                <span style="font-weight: 600; color: #2c5aa0"
+                  >Общий ФОТ команды:</span
+                >
+                <span style="font-size: 20px; font-weight: 700; color: #2c5aa0"
+                  >510 000 ₽</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Остатки отпусков -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">🏖️</div>
+              <div class="card-title">Остатки отпусков</div>
+            </div>
+            <div class="employee-list-item">
+              <span class="employee-name">Иванов И.</span>
+              <span class="employee-value">28 дней</span>
+            </div>
+            <div class="employee-list-item">
+              <span class="employee-name">Петрова М.</span>
+              <span class="employee-value">14 дней</span>
+            </div>
+            <div class="employee-list-item">
+              <span class="employee-name">Сидоров А.</span>
+              <span class="employee-value">21 день</span>
+            </div>
+            <div class="employee-list-item">
+              <span class="employee-name">Козлова Е.</span>
+              <span class="employee-value">28 дней</span>
+            </div>
+            <div class="employee-list-item">
+              <span class="employee-name">Морозов Д.</span>
+              <span class="employee-value">7 дней</span>
+            </div>
+            <div
+              style="
+                margin-top: 20px;
+                padding: 15px;
+                background: #fff3cd;
+                border-radius: 10px;
+                border-left: 4px solid #ff9800;
+              "
+            >
+              <div style="font-size: 14px; color: #856404">
+                <strong>⚠️ Внимание:</strong> Морозов Д. имеет мало дней отпуска
+                (7 дней)
+              </div>
+            </div>
+          </div>
+
+          <!-- Трекеры сотрудников -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">📋</div>
+              <div class="card-title">Персональные трекеры</div>
+            </div>
+            <a
+              href="https://tracker.gemsdev.com/ivanov"
+              class="link-item"
+              target="_blank"
+            >
+              <span class="employee-name">Иванов И.</span>
+              <span class="link-url">tracker.gemsdev.com/ivanov</span>
+            </a>
+            <a
+              href="https://tracker.gemsdev.com/petrova"
+              class="link-item"
+              target="_blank"
+            >
+              <span class="employee-name">Петрова М.</span>
+              <span class="link-url">tracker.gemsdev.com/petrova</span>
+            </a>
+            <a
+              href="https://tracker.gemsdev.com/sidorov"
+              class="link-item"
+              target="_blank"
+            >
+              <span class="employee-name">Сидоров А.</span>
+              <span class="link-url">tracker.gemsdev.com/sidorov</span>
+            </a>
+            <a
+              href="https://tracker.gemsdev.com/kozlova"
+              class="link-item"
+              target="_blank"
+            >
+              <span class="employee-name">Козлова Е.</span>
+              <span class="link-url">tracker.gemsdev.com/kozlova</span>
+            </a>
+            <a
+              href="https://tracker.gemsdev.com/morozov"
+              class="link-item"
+              target="_blank"
+            >
+              <span class="employee-name">Морозов Д.</span>
+              <span class="link-url">tracker.gemsdev.com/morozov</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Вкладка администратора -->
+      <div id="admin-tab" class="tab-content">
+        <div class="team-header">
+          <h2>⚙️ Импорт данных</h2>
+          <p>Управление командами и сотрудниками</p>
+        </div>
+
+        <div class="grid" style="grid-template-columns: 1fr">
+          <!-- Импорт из файла -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">📂</div>
+              <div class="card-title">Импорт из файла</div>
+            </div>
+
+            <div id="successMessage" class="success-message">
+              ✅ Данные успешно импортированы!
+            </div>
+
+            <div id="errorMessage" class="error-message">
+              ❌ Ошибка при импорте файла. Проверьте формат данных.
+            </div>
+
+            <div
+              class="file-upload-area"
+              id="fileUploadArea"
+              onclick="document.getElementById('fileInput').click()"
+            >
+              <div class="file-upload-icon">📁</div>
+              <div class="file-upload-text">
+                Перетащите файл сюда или нажмите для выбора
+              </div>
+              <div class="file-upload-hint">
+                Поддерживаются форматы: XLSX, CSV
+              </div>
+              <input
+                type="file"
+                id="fileInput"
+                accept=".xlsx,.csv"
+                style="display: none"
+                onchange="handleFileUpload(event)"
+              />
+            </div>
+
+            <div
+              style="
+                margin-top: 20px;
+                padding: 15px;
+                background: #e7f3ff;
+                border-radius: 10px;
+              "
+            >
+              <div
+                style="font-weight: 600; color: #2c5aa0; margin-bottom: 10px"
+              >
+                📋 Формат файла:
+              </div>
+              <div style="font-size: 14px; color: #666; line-height: 1.8">
+                <strong>Колонки:</strong> Команда | Фамилия | Имя | Email |
+                Telegram | Зарплата | Отпуск (дни) | Руководитель (да/нет)<br />
+                <strong>Пример:</strong> команда GEMS | Иванов | Иван |
+                ivan@gems.com | @ivan | 120000 | 28 | да
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Ручное добавление -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">✍️</div>
+              <div class="card-title">Ручное добавление команды</div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Название команды</label>
+              <input
+                type="text"
+                id="teamName"
+                class="form-input"
+                placeholder="Например: команда друзей GEMS"
+              />
+            </div>
+
+            <div style="margin-bottom: 20px">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 15px;
+                "
+              >
+                <label class="form-label" style="margin-bottom: 0"
+                  >Сотрудники команды</label
+                >
+                <button class="btn btn-secondary" onclick="addEmployeeRow()">
+                  ➕ Добавить сотрудника
+                </button>
+              </div>
+
+              <div id="employeesList">
+                <!-- Первый сотрудник по умолчанию -->
+                <div class="employee-row">
+                  <div class="form-group" style="margin-bottom: 0">
+                    <label class="form-label">Фамилия</label>
+                    <input
+                      type="text"
+                      class="form-input employee-lastname"
+                      placeholder="Иванов"
+                    />
+                  </div>
+                  <div class="form-group" style="margin-bottom: 0">
+                    <label class="form-label">Имя</label>
+                    <input
+                      type="text"
+                      class="form-input employee-firstname"
+                      placeholder="Иван"
+                    />
+                  </div>
+                  <div class="form-group" style="margin-bottom: 0">
+                    <label class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-input employee-email"
+                      placeholder="ivan@gemsdev.com"
+                    />
+                  </div>
+                  <div class="form-group" style="margin-bottom: 0">
+                    <label class="form-label">Telegram</label>
+                    <input
+                      type="text"
+                      class="form-input employee-telegram"
+                      placeholder="@ivan"
+                    />
+                  </div>
+                  <div class="checkbox-group">
+                    <input
+                      type="checkbox"
+                      class="employee-manager"
+                      id="manager0"
+                    />
+                    <label for="manager0">Руководитель</label>
+                  </div>
+                  <button
+                    class="btn-remove"
+                    onclick="removeEmployeeRow(this)"
+                    title="Удалить"
+                  >
+                    🗑️
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Дополнительная информация</label>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                  gap: 15px;
+                "
+              >
+                <div>
+                  <label class="form-label" style="font-size: 12px; color: #666"
+                    >Зарплата (по умолчанию)</label
+                  >
+                  <input
+                    type="number"
+                    id="defaultSalary"
+                    class="form-input"
+                    placeholder="100000"
+                    value="100000"
+                  />
+                </div>
+                <div>
+                  <label class="form-label" style="font-size: 12px; color: #666"
+                    >Дней отпуска</label
+                  >
+                  <input
+                    type="number"
+                    id="defaultVacation"
+                    class="form-input"
+                    placeholder="28"
+                    value="28"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 15px; flex-wrap: wrap">
+              <button class="btn btn-primary" onclick="saveTeam()">
+                💾 Сохранить команду
+              </button>
+              <button class="btn btn-secondary" onclick="clearForm()">
+                🔄 Очистить форму
+              </button>
+            </div>
+          </div>
+
+          <!-- Список созданных команд -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">📊</div>
+              <div class="card-title">Созданные команды</div>
+            </div>
+
+            <div id="teamsList">
+              <div style="text-align: center; padding: 40px; color: #666">
+                Нет созданных команд. Добавьте первую команду выше.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="
+          text-align: center;
+          color: rgba(255, 255, 255, 0.8);
+          font-size: 14px;
+          margin-top: 30px;
+        "
+      >
+        © 2025 Портал сотрудника GEMS | Все данные конфиденциальны
+      </div>
+    </div>
+
+    <script>
+      let employeeCounter = 1;
+      let teams = [];
+
+      function switchTab(tabName) {
+        const tabs = document.querySelectorAll(".tab-content");
+        tabs.forEach((tab) => tab.classList.remove("active"));
+
+        const buttons = document.querySelectorAll(".tab-button");
+        buttons.forEach((btn) => btn.classList.remove("active"));
+
+        if (tabName === "employee") {
+          document.getElementById("employee-tab").classList.add("active");
+          buttons[0].classList.add("active");
+        } else if (tabName === "manager") {
+          document.getElementById("manager-tab").classList.add("active");
+          buttons[1].classList.add("active");
+        } else if (tabName === "admin") {
+          document.getElementById("admin-tab").classList.add("active");
+          buttons[2].classList.add("active");
+        }
+      }
+
+      function addEmployeeRow() {
+        const employeesList = document.getElementById("employeesList");
+        const row = document.createElement("div");
+        row.className = "employee-row";
+        row.innerHTML = `
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label class="form-label">Фамилия</label>
+                    <input type="text" class="form-input employee-lastname" placeholder="Иванов">
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label class="form-label">Имя</label>
+                    <input type="text" class="form-input employee-firstname" placeholder="Иван">
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input employee-email" placeholder="ivan@gemsdev.com">
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label class="form-label">Telegram</label>
+                    <input type="text" class="form-input employee-telegram" placeholder="@ivan">
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" class="employee-manager" id="manager${employeeCounter}">
+                    <label for="manager${employeeCounter}">Руководитель</label>
+                </div>
+                <button class="btn-remove" onclick="removeEmployeeRow(this)" title="Удалить">🗑️</button>
+            `;
+        employeesList.appendChild(row);
+        employeeCounter++;
+      }
+
+      function removeEmployeeRow(button) {
+        const employeesList = document.getElementById("employeesList");
+        if (employeesList.children.length > 1) {
+          button.parentElement.remove();
+        } else {
+          alert("Должен остаться хотя бы один сотрудник!");
+        }
+      }
+
+      function clearForm() {
+        document.getElementById("teamName").value = "";
+        document.getElementById("employeesList").innerHTML = `
+                <div class="employee-row">
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label class="form-label">Фамилия</label>
+                        <input type="text" class="form-input employee-lastname" placeholder="Иванов">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label class="form-label">Имя</label>
+                        <input type="text" class="form-input employee-firstname" placeholder="Иван">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input employee-email" placeholder="ivan@gemsdev.com">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label class="form-label">Telegram</label>
+                        <input type="text" class="form-input employee-telegram" placeholder="@ivan">
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" class="employee-manager" id="manager0">
+                        <label for="manager0">Руководитель</label>
+                    </div>
+                    <button class="btn-remove" onclick="removeEmployeeRow(this)" title="Удалить">🗑️</button>
+                </div>
+            `;
+        employeeCounter = 1;
+      }
+
+      function saveTeam() {
+        const teamName = document.getElementById("teamName").value.trim();
+        if (!teamName) {
+          alert("Пожалуйста, укажите название команды!");
+          return;
+        }
+
+        const rows = document.querySelectorAll(".employee-row");
+        const employees = [];
+
+        rows.forEach((row, index) => {
+          const lastname = row.querySelector(".employee-lastname").value.trim();
+          const firstname = row
+            .querySelector(".employee-firstname")
+            .value.trim();
+          const email = row.querySelector(".employee-email").value.trim();
+          const telegram = row.querySelector(".employee-telegram").value.trim();
+          const isManager = row.querySelector(".employee-manager").checked;
+
+          if (lastname && firstname) {
+            employees.push({
+              lastname,
+              firstname,
+              email,
+              telegram,
+              isManager,
+              salary: document.getElementById("defaultSalary").value,
+              vacation: document.getElementById("defaultVacation").value,
+            });
+          }
+        });
+
+        if (employees.length === 0) {
+          alert("Добавьте хотя бы одного сотрудника!");
+          return;
+        }
+
+        teams.push({ name: teamName, employees });
+        displayTeams();
+        clearForm();
+
+        // Показать сообщение об успехе
+        const successMsg = document.getElementById("successMessage");
+        successMsg.style.display = "block";
+        setTimeout(() => (successMsg.style.display = "none"), 3000);
+      }
+
+      function displayTeams() {
+        const teamsList = document.getElementById("teamsList");
+
+        if (teams.length === 0) {
+          teamsList.innerHTML = `
+                    <div style="text-align: center; padding: 40px; color: #666;">
+                        Нет созданных команд. Добавьте первую команду выше.
+                    </div>
+                `;
+          return;
+        }
+
+        let html = "";
+        teams.forEach((team, teamIndex) => {
+          html += `
+                    <div style="margin-bottom: 25px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3 style="color: #2c5aa0; font-size: 20px;">👥 ${team.name}</h3>
+                            <button class="btn-remove" onclick="deleteTeam(${teamIndex})" title="Удалить команду">🗑️ Удалить</button>
+                        </div>
+                        <div style="color: #666; margin-bottom: 10px;">Сотрудников: ${team.employees.length}</div>
+                `;
+
+          team.employees.forEach((emp) => {
+            html += `
+                        <div class="employee-list-item">
+                            <div>
+                                <div class="employee-name">${emp.lastname} ${emp.firstname} ${emp.isManager ? "👑" : ""}</div>
+                                <div style="font-size: 13px; color: #666;">${emp.email} • ${emp.telegram}</div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="employee-value">${parseInt(emp.salary).toLocaleString("ru-RU")} ₽</div>
+                                <div style="font-size: 13px; color: #666;">Отпуск: ${emp.vacation} дней</div>
+                            </div>
+                        </div>
+                    `;
+          });
+
+          html += "</div>";
+        });
+
+        teamsList.innerHTML = html;
+      }
+
+      function deleteTeam(index) {
+        if (confirm("Вы уверены, что хотите удалить эту команду?")) {
+          teams.splice(index, 1);
+          displayTeams();
+        }
+      }
+
+      function handleFileUpload(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const fileName = file.name.toLowerCase();
+        const successMsg = document.getElementById("successMessage");
+        const errorMsg = document.getElementById("errorMessage");
+
+        if (fileName.endsWith(".xlsx") || fileName.endsWith(".csv")) {
+          // Имитация успешной загрузки
+          successMsg.style.display = "block";
+          setTimeout(() => (successMsg.style.display = "none"), 3000);
+
+          // Здесь должна быть реальная логика парсинга файла
+          console.log("Файл загружен:", file.name);
+        } else {
+          errorMsg.style.display = "block";
+          setTimeout(() => (errorMsg.style.display = "none"), 3000);
+        }
+
+        // Сброс input для возможности повторной загрузки того же файла
+        event.target.value = "";
+      }
+
+      // Drag & Drop для файлов
+      const uploadArea = document.getElementById("fileUploadArea");
+
+      uploadArea.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        uploadArea.classList.add("dragover");
+      });
+
+      uploadArea.addEventListener("dragleave", () => {
+        uploadArea.classList.remove("dragover");
+      });
+
+      uploadArea.addEventListener("drop", (e) => {
+        e.preventDefault();
+        uploadArea.classList.remove("dragover");
+
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+          document.getElementById("fileInput").files = files;
+          handleFileUpload({ target: { files } });
+        }
+      });
+    </script>
+  </body>
+</html>
