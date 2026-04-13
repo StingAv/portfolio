@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", async (e) => {
   const userInfoContainer = document.querySelector(".employee-info");
   const welcomeHeader = document.querySelector(".header h1");
 
-  const API_URL = "http://localhost:5029/api/v1/team/all";
-  // const userId = 1
+  const API_URL = "http://localhost:5029/api/v2/employee/all";
+  // const userId =
 
   userInfoContainer.innerHTML = `<p>⏳ Загрузка данных...</p>`;
 
@@ -11,16 +11,16 @@ document.addEventListener("DOMContentLoaded", async (e) => {
     const userResponse = await fetch(`${API_URL}`);
     const userData = await userResponse.json();
 
-    welcomeHeader.innerHTML = `👋 Добро пожаловать, ${userData.name}!`;
+    welcomeHeader.innerHTML = `👋 Добро пожаловать, ${userData[0].name}!`;
     userInfoContainer.innerHTML = `
     <span>Команда:</span>
-    <strong>Команда друзей GEMS</strong>
+    <strong>${userData[0].name}</strong>
     <span>Грейд:</span>
-    <strong>123</strong>
+    <strong>${userData[0].grade}</strong>
     <span>Телеграм:</span>
-    <strong>@${userData.username.toLowerCase()}</strong>
+    <strong>${userData[0].tgChatLink}</strong>
     <span>Почта:</span>
-    <strong>${userData.email}</strong>
+    <strong>${userData[0].email}</strong>
     `
     
   } catch (error) {
